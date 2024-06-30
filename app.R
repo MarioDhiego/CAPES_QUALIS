@@ -52,7 +52,7 @@ fluidRow(
   box(
     sliderTextInput(
       inputId = "estrato_i",
-      label = "Escolha a classificação no periódicos CAPES",
+      label = "Classificação do Periódico",
       choices = sort(unique(qualis_capes$estrato)),
       selected = c("A1", "C"),
       grid = TRUE )
@@ -74,9 +74,9 @@ tags$a(href = "https://sucupira.capes.gov.br/sucupira/public/consultas/coleta/ve
 br(),
 br(),
 "- Desenvolvido utilizando:",
-tags$a(href = "https://www.r-project.org/", "R"), ",",
-tags$a(href = "https://www.rstudio.com/", "RStudio"), ",",
-tags$a(href = "https://shinyapps.io", "Shinyapps.io"), ",",
+tags$a(href = "https://www.r-project.org/", "R"), br(),
+tags$a(href = "https://www.rstudio.com/", "RStudio"), br(),
+tags$a(href = "https://shinyapps.io", "Shinyapps.io"), br(),
 "e os pacotes",
 tags$a(href = "https://shiny.rstudio.com/", "shiny"), ",",
 tags$a(href = "https://rstudio.github.io/shinydashboard/", "shinydashboard"), ",",

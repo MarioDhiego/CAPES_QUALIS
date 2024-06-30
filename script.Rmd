@@ -1,0 +1,51 @@
+---
+title: "Preparando os dados do QUALIS CAPES"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+Carregar bibliotecas usadas
+```{r message=FALSE, warning=FALSE}
+library(readr)
+library(janitor)
+```
+
+Leitura dos arquivos. 
+
+Fonte: [Sucupira - CAPES](https://sucupira.capes.gov.br/sucupira/public/consultas/coleta/veiculoPublicacaoQualis/listaConsultaGeralPeriodicos.jsf)
+
+
+```{r message=FALSE, warning=FALSE}
+qualis_capes <- readr::read_delim("data/capes/classificacoes_2013-2016.xls", 
+    "\t", escape_double = FALSE, locale = locale(encoding = "ISO-8859-1"), 
+    trim_ws = TRUE)
+```
+
+
+Renomear as colunas
+```{r}
+qualis_capes <- janitor::clean_names(qualis_capes)
+```
+
+
+```{r}
+qualis_capes$estrato <- base::as.factor(qualis_capes$estrato)
+```
+
+
+
+Salvar em um arquivo .rds
+```{r}
+readr::write_rds(qualis_capes, "output/qualis_capes.rds")
+```
+
+
+Contar quantos periódicos estão na base:
+```{r}
+issn <- base::unique(qualis_capes$issn)
+length(issn)
+```
+
