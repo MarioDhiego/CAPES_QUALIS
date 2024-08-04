@@ -1,7 +1,7 @@
 ---
 title: "Tratando os dados da Scielo"
-author: "Beatriz MIlz"
-date: "26 de maio de 2019"
+author: "Mário Diego"
+date: "26 de maio de 2024"
 output: html_document
 ---
 

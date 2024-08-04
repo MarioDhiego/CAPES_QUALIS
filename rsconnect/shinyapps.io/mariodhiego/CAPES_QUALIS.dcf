@@ -1,0 +1,12 @@
+name: CAPES_QUALIS
+title: CAPES_QUALIS
+username: mariodhiego
+account: mariodhiego
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 12407696
+bundleId: 8945809
+url: https://mariodhiego.shinyapps.io/CAPES_QUALIS/
+version: 1
+asMultiple: FALSE
+asStatic: FALSE

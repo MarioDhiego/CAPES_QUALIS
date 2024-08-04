@@ -3,7 +3,11 @@ library(shiny)
 library(DT)
 library(shinyWidgets)
 library(shinydashboard)
+library(shinydashboardPlus)
 library(tidyverse)
+library(rsconnect)
+library(reticulate)
+library(renv)
 
 qualis_capes <- readr::read_rds("output/qualis_capes.rds")
 
@@ -12,13 +16,13 @@ dashboardHeader(title = "PESQUISA DE PERIÓDICOS",
                 titleWidth = 300),
 dashboardSidebar(width = 300,
 sidebarMenu(
-  menuItem("Tipos de Periódicos", 
+  menuItem("TIPOS DE PERIODICOS", 
            tabName = "dashboard", 
            icon = icon("search")),
-  menuItem("Saiba Mais", 
+  menuItem("SOBRE O APP", 
            tabName = "sobre", 
            icon = icon("graduation-cap")),
-  menuItem("Acesse o Script", 
+  menuItem("ACESSO AO SCRIPT", 
            href = "https://github.com/MarioDhiego/CAPES_QUALIS",
            icon = icon("github-square")
            )
@@ -91,8 +95,16 @@ br(),
 "- Desenvolvido por",tags$a(href = "https://github.com/MarioDhiego", "Mário Dhiego"),
                           )
                         )
-                      )
+                      ),
+footer = dashboardFooter(
+  left = tags$b("UFPA"), 
+  right = tags$b("Belém-PA, 2024 v.1")
 )
+
+
+)
+
+
 
 
 server <- function(input, output) {
